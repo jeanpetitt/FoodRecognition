@@ -1,17 +1,26 @@
 import { View, Text, ImageBackground, StyleSheet } from 'react-native'
-import React from 'react'
+import React, {useLayoutEffect} from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { CommonActions } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Button from './components/Button'
 
-const Home = () => {
-    const navigation = useNavigation()
+const Home = ({navigation}) => {
+    
+    useLayoutEffect(()=> {
+        navigation.setOptions({
+      headerTitle: 'FoodRecognition',
+      headerStyle: {
+        backgroundColor: '#d79df2',
+      }
+      
+    })
+    }, )
 
     return (
-        <ImageBackground source={require('../assets/koki.jpg')} resizeMode='cover' style={styles.container}>
+        <ImageBackground source={require('../assets/fruit2.jpeg')} resizeMode='cover' style={styles.container}>
             
-            <View style={styles.topCard}>
+            {/* <View style={styles.topCard}>
                 <View style={styles.info_place}>
                     <View style={styles.textFlex}>
                         <Icon 
@@ -34,18 +43,16 @@ const Home = () => {
                     <Text style={styles.helloText}>Hello food lovers,</Text>
                     <Text style={{ fontSize: 16 }}>welcome to this food recognition app</Text>
                 </View>
-            </View>
+            </View> */}
 
             <View style={{ margin: 10, marginTop: 200 }}>
                 <Button 
                     icon='camera' 
                     title='Open camera' 
-                    color='violet'
+                    color='orange'
                     subText='Real time food components detection' 
-                    onPress={ () => navigation.dispatch(
-                        CommonActions.navigate({
-                            name: 'camera',
-                        }))
+                    onPress={ () => navigation.navigate(
+                             'camera',)
                     }
                 />
                 <Button 

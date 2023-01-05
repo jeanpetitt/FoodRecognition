@@ -7,7 +7,7 @@ import axios from "axios";
 import BboxView, { BoxType } from "./BboxView";
 
 const instance = axios.create({
-  baseURL: "http://192.168.100.47:5000",
+  baseURL: "http://192.168.43.6:5000",
   timeout: 100000000
 })
 

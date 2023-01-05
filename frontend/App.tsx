@@ -13,7 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="home"
-        screenOptions={{ headerShown: false }}
+       
       >
         <Stack.Screen
           name="home"
@@ -21,7 +21,7 @@ export default function App() {
           //options={{ title: 'Here is home' }}
         />
         
-        <Stack.Screen name="camera" component={CameraView} />
+        <Stack.Screen name="camera" options={{headerShown: false}} component={CameraView} />
         <Stack.Screen name="test" component={Test} />
         
       </Stack.Navigator>

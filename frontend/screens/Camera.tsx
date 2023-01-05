@@ -7,12 +7,12 @@ import ImageViewer from './components/ImageViewer'
 
 const tag = '[CAMERA]'
 
-export default function CameraView() {
+export default function CameraView({navigation}) {
 
     const [hasPermission, setHasPermission] = useState<any>(null)
     const [previewVisible, setPreviewVisible] = useState(false)
     const [capturedImage, setCapturedImage] = useState<any>(null)
-    const [startOver, setStartOver] = useState(true)
+    const [startOver, setStartOver] = useState(false)
     const [type, setType] = useState(CameraType.back)
 
     let camera = useRef<Camera>(null);
@@ -24,7 +24,7 @@ export default function CameraView() {
         })()
     }, [])
     const __closeCamera = () => {
-        setStartOver(true)
+        navigation.navigate('home')
     }
     const __takePicture = async () => {
         if (camera.current) {
@@ -51,7 +51,7 @@ export default function CameraView() {
                     }}
                 >
                     <TouchableOpacity
-                        onPress={() => setStartOver(false)}
+                        onPress={() => setStartOver(true)}
                         style={{
                         width: 130,
                         borderRadius: 4,
@@ -152,7 +152,7 @@ export default function CameraView() {
                                                 borderRadius: 50,
                                                 borderWidth: 4,
                                                 borderColor: '#fff',
-                                                backgroundColor: '#5B005C'
+                                                backgroundColor: '#FAB224'
                                             }}
                                         />
                                     </View>

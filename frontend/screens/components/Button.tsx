@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 const Button = ({ title, icon, subText, onPress, color }: {title: string, icon: string, subText: string, onPress: any, color: string}) => {
 
     let textColor, backgroundColor
-    color == 'violet' ? (textColor='#fff', backgroundColor='#5B005C') : (textColor='#5B005C', backgroundColor='#fff')
+    color == 'orange' ? (textColor='#fff', backgroundColor='#FAB224') : (textColor='#5B005C', backgroundColor='#fff')
 
     return (
         <View style={{ marginVertical: 10 }}>
